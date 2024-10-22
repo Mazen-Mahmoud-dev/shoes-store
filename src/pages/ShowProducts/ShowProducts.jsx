@@ -5,7 +5,7 @@ import { BASE_URL } from '../../utils/constants';
 
 const ShowProducts = () => {
   const [products, setProducts] = useState([]);
-  let [counterPage,setCounterPage] = useState(1)
+  let [counterPage] = useState(1)
   let [viewMsgDelete,setViewMsgDelete] = useState(false)
   const [productId,setProductId] = useState('')
   const token = localStorage.getItem("token")
@@ -19,9 +19,6 @@ const ShowProducts = () => {
     }
   };
   useEffect(() => {
-
-    
-
     fetchProducts();
     localStorage.setItem("pageCounter",JSON.stringify(counterPage))
   }, []);

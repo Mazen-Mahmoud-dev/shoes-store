@@ -1,9 +1,8 @@
-import React, { useState, useEffect } from 'react';
-import { BrowserRouter as Router, Route, Routes, Link } from 'react-router-dom';
+import React from 'react';
+import {  Route, Routes } from 'react-router-dom';
 import axios from 'axios';
 
 import Cart from '../../pages/Cart/Cart';
-// import Checkout from './Checkout';
 import Product from '../../pages/Product/Product';
 import { BASE_URL } from '../../utils/constants';
 

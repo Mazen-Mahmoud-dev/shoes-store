@@ -2,12 +2,9 @@ import { useState } from 'react';
 import NavBar from '../../components/NavBar/NavBar';
 import { validateEmail } from '../../utils/helper';
 import axiosInstance from '../../utils/axiosInstance';
-import { useNavigate } from 'react-router-dom';
-
 const ForgotPassword = () => {
   const [email, setEmail] = useState('');
     const [error,setError] = useState("")
-    const navigate = useNavigate()
   const handleSubmit = async (e) => {
     e.preventDefault();
     if(!email){

@@ -6,7 +6,7 @@ import { BASE_URL } from '../../utils/constants';
 
 const ShowUsers = () => {
   const [users, setUsers] = useState([]);
-  let [counterPage,setCounterPage] = useState(1)
+  let [counterPage] = useState(1)
   let [viewMsgDelete,setViewMsgDelete] = useState(false)
   const [userId,setUserId] = useState('')
   const token = localStorage.getItem("token")

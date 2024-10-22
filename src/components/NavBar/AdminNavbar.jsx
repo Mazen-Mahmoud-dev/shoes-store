@@ -44,19 +44,19 @@ const AdminNavbar = () => {
                 className="absolute right-0 text-white z-10 mt-2 w-48 origin-top-right rounded-md bg-primary py-1 shadow-lg ring-1 ring-black ring-opacity-5 transition focus:outline-none data-[closed]:scale-95 data-[closed]:transform data-[closed]:opacity-0 data-[enter]:duration-100 data-[leave]:duration-75 data-[enter]:ease-out data-[leave]:ease-in"
                 >
                 <MenuItem>
-                    <a href="#" className="block px-4 py-2 text-sm  data-[focus]:bg-black">
+                    <span className="block px-4 py-2 text-sm  data-[focus]:bg-black">
                     Your Profile
-                    </a>
+                    </span>
                 </MenuItem>
                 <MenuItem>
-                    <a href="#" className="block px-4 py-2 text-sm  data-[focus]:bg-black">
+                    <span className="block px-4 py-2 text-sm  data-[focus]:bg-black">
                     Settings
-                    </a>
+                    </span>
                 </MenuItem>
                 <MenuItem>
-                    <a href="#" onClick={()=>onlogout()} className="block px-4 py-2 text-sm data-[focus]:bg-black">
+                    <span onClick={()=>onlogout()} className="block px-4 py-2 text-sm data-[focus]:bg-black">
                     Sign out
-                    </a>
+                    </span>
                 </MenuItem>
                 </MenuItems>
             </Menu>

@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import NavBar from '../../components/NavBar/NavBar'
-import { Link, Navigate, useNavigate } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 import PasswordInput from '../../components/Input/PasswordInput'
 import { validateEmail } from '../../utils/helper'
 import axiosInstance from '../../utils/axiosInstance'
