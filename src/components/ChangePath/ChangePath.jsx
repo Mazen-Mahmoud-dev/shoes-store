@@ -7,7 +7,7 @@ const ChangePath = () => {
         navigate('/login')
         localStorage.clear()
         window.location.reload();
-    },[])
+    },[navigate])
   return (
     <div>ChangePath</div>
   )

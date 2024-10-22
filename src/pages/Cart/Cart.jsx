@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import axiosInstance from '../../utils/axiosInstance';
 import NavBar from '../../components/NavBar/NavBar';
@@ -43,9 +43,7 @@ function Cart({ removeFromCart,emptyCart }) {
         setCart(updatedCart);
         
     };
-    useEffect(()=>{
-        fetchCartProducts()
-    })
+    fetchCartProducts()
   return (
     <div>
         <NavBar  userInfo={true} />

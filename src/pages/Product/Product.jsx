@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from 'react'
+import React, { useRef, useState } from 'react'
 import { useParams, NavLink } from 'react-router-dom';
 import axios from 'axios'
 import { XMarkIcon } from '@heroicons/react/24/outline'
@@ -47,18 +47,18 @@ const Product = ({addToCart}) => {
     const handleSelectChange = (e) => {
       setSelectedSize(e.target.value); // Update state with selected option
     };
-    useEffect(()=>{
-        const fetchProduct = async ()=>{
-            try{
-                const response = await axios.get(`${BASE_URL}/api/products/${productId}`)
-                setProduct(response.data.data.product)
-            }  
-            catch (error) {
-                console.error('Error fetching the product', error);
-              }
-        }
-        fetchProduct()
-    })
+
+    const fetchProduct = async ()=>{
+        try{
+            const response = await axios.get(`${BASE_URL}/api/products/${productId}`)
+            setProduct(response.data.data.product)
+        }  
+        catch (error) {
+            console.error('Error fetching the product', error);
+          }
+    }
+    fetchProduct()
+
   return (
 
       <div>

@@ -82,7 +82,7 @@ const AddProduct = ({onSubmitProduct}) => {
                                         type="text"
                                         placeholder="shoe"
                                         onChange={(e)=>setTitle(e.target.value)}
-                                        className="block pl-3 tracking-wide font-bold text-primary flex-1 border-0 bg-transparent py-1.5 pl-1 placeholder:text-gray-400 focus:ring-0 sm:text-sm sm:leading-6"
+                                        className="block tracking-wide font-bold text-primary flex-1 border-0 bg-transparent py-1.5 pl-1 placeholder:text-gray-400 focus:ring-0 sm:text-sm sm:leading-6"
                                     />
                                     </div>
                                 </div>
@@ -116,7 +116,7 @@ const AddProduct = ({onSubmitProduct}) => {
                                         type="number"
                                         onChange={(e)=>setPrice(e.target.value)}
                                         placeholder="250EGP"
-                                        className="block pl-3 tracking-wide font-bold text-primary flex-1 border-0 bg-transparent py-1.5 pl-1 placeholder:text-gray-400 focus:ring-0 sm:text-sm sm:leading-6"
+                                        className="block tracking-wide font-bold text-primary flex-1 border-0 bg-transparent py-1.5 pl-1 placeholder:text-gray-400 focus:ring-0 sm:text-sm sm:leading-6"
                                     />
                                     </div>
                                 </div>

@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import React, { useState } from 'react'
 import NavBar from '../../components/NavBar/NavBar';
 import axiosInstance from '../../utils/axiosInstance';
 import { useLocation, useNavigate } from 'react-router-dom';
@@ -26,9 +26,7 @@ const Dashboard = () => {
       
     } 
   };
-  useEffect(()=>{
-    getUserInfo()
-  })
+  getUserInfo()
   const location = useLocation();
   return (
     <>

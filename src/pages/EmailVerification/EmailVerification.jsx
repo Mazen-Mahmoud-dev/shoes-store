@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import React, { useState } from 'react'
 import Modal from 'react-modal';
 import axiosInstance from '../../utils/axiosInstance';
 import { useNavigate } from 'react-router-dom';
@@ -31,9 +31,7 @@ const EmailVerification = () => {
       
     } 
   };
-  useEffect(()=>{
-    getUserInfo()
-  })
+  getUserInfo()
   return (
     <div>
         <div>
