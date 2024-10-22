@@ -22,7 +22,7 @@ const VerifyEmail = () => {
     };
 
     verifyEmail();
-  }, [token]);
+  });
 
   return <div>{message}</div>;
 };

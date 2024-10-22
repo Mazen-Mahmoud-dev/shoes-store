@@ -18,29 +18,30 @@ const Product = ({url,isUser,Add }) => {
     const width = window.innerWidth;
     setCountProducts(width < 640 ? 1 : 2);
   };
-  const fetchProducts = async () => {
-    try {
-      if(products.length === 0){
-        const response = Add
-              ? await axios.get(url)
-              : await axios.post(url, { userId });
-          setProducts(response.data?.data?.products || response.data?.data || []);
-        return;
-      }
-    } catch (error) {
-      console.error('Error fetching products', error);
-    }
-  };
+  
   useEffect(() => {
-    
+    const fetchProducts = async () => {
+      try {
+        if(products.length === 0){
+          const response = Add
+                ? await axios.get(url)
+                : await axios.post(url, { userId });
+            setProducts(response.data?.data?.products || response.data?.data || []);
+          return;
+        }
+      } catch (error) {
+        console.error('Error fetching products', error);
+      }
+    };
     if(products.length === 0){
       setNoFavouriteProductsMsg('There is No Favourite Products.')
     }else{
       setNoFavouriteProductsMsg('')
     }
+
     fetchProducts();
     handleResize()
-  }, [products]);
+  }, [userId,url,Add,products.length]);
 
   const EditProduct = async (e,product)=>{
     if(isUser){

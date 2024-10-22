@@ -138,6 +138,7 @@ const Product = ({addToCart}) => {
                               setError("No Stock!")
                             }
                           }
+                          return 1;
                         }) 
                         
                       } }
