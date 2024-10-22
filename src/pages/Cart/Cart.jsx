@@ -45,7 +45,7 @@ function Cart({ removeFromCart,emptyCart }) {
     };
     useEffect(()=>{
         fetchCartProducts()
-    },[])
+    })
   return (
     <div>
         <NavBar  userInfo={true} />

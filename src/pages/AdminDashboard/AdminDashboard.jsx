@@ -1,14 +1,12 @@
 import React, { useEffect, useState } from 'react'
-import NavBar from '../../components/NavBar/NavBar'
 import axiosInstance from '../../utils/axiosInstance'
-import { Outlet, useNavigate } from 'react-router-dom'
-import SideBar from '../../components/SideBar/SideBar'
+import { Outlet, useNavigate } from 'react-router-dom';
 import AdminNavbar from '../../components/NavBar/AdminNavbar'
 import { BASE_URL } from '../../utils/constants'
 
 const AdminDashboard = () => {
     const navigate = useNavigate()
-  const [userInfo,setUserInfo] = useState(null)
+  const [,setUserInfo] = useState(null)
   const getUserInfo = async()=>{
     try{
       const response = await axiosInstance.get(`${BASE_URL}/get-user`);
@@ -26,7 +24,7 @@ const AdminDashboard = () => {
   };
   useEffect(()=>{
     getUserInfo()
-  },[])
+  })
   return (
     <>
       <AdminNavbar />

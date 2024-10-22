@@ -22,7 +22,7 @@ const ShowUsers = () => {
   useEffect(() => {
     fetchUsers();
     localStorage.setItem("pageCounter",JSON.stringify(counterPage))
-  }, []);
+  });
   const HandlePreviousPage = async ()=>{
     let page = localStorage.getItem("pageCounter")
     if(page > 1){

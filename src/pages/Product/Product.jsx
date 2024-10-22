@@ -58,7 +58,7 @@ const Product = ({addToCart}) => {
               }
         }
         fetchProduct()
-    },[])
+    })
   return (
 
       <div>

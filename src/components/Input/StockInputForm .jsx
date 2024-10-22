@@ -4,7 +4,7 @@ const StockInputForm = ({ productDetails, onSubmitStock }) => {
     const [stockDetails, setStockDetails] = useState(
       productDetails.details.map(detail => ({ ...detail, stock: 0 }))
     );
-    let [error,setError] = useState(null)
+    let [error] = useState(null)
 
     const handleStockChange = (size, value) => {
       setStockDetails(stockDetails.map(d => 

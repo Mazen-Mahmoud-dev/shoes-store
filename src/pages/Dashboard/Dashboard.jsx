@@ -28,7 +28,7 @@ const Dashboard = () => {
   };
   useEffect(()=>{
     getUserInfo()
-  },[])
+  })
   const location = useLocation();
   return (
     <>

@@ -21,7 +21,7 @@ const ShowProducts = () => {
   useEffect(() => {
     fetchProducts();
     localStorage.setItem("pageCounter",JSON.stringify(counterPage))
-  }, []);
+  });
   const HandlePreviousPage = async(counterPage)=>{
     let page = localStorage.getItem("pageCounter")
     if(page > 1){
