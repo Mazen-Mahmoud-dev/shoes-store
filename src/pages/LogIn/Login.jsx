@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import NavBar from '../../components/NavBar/NavBar'
 import { Link, useNavigate } from 'react-router-dom'
 import PasswordInput from '../../components/Input/PasswordInput'
@@ -54,6 +54,9 @@ const Login = () => {
       }
     } 
   };
+  useEffect(()=>{
+    localStorage.clear()
+  },[])
   return (
     <>
       <NavBar />
