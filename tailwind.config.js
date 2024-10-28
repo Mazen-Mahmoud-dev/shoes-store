@@ -7,7 +7,10 @@ module.exports = {
         primary:"#1f2937",
         secondary:"#4a5568",
         main:"#0284c7"
-      }
+      },
+      flexBasis: {
+        'custom': 'calc(100% - 450px)',
+      },
     },
   },
   plugins: [],

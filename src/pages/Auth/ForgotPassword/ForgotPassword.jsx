@@ -1,10 +1,11 @@
 import { useState } from 'react';
-import NavBar from '../../components/NavBar/NavBar';
-import { validateEmail } from '../../utils/helper';
-import axiosInstance from '../../utils/axiosInstance';
+import NavBar from '../../../components/NavBar/NavBar';
+import { validateEmail } from '../../../utils/helper';
+import axiosInstance from '../../../utils/axiosInstance';
+
 const ForgotPassword = () => {
   const [email, setEmail] = useState('');
-    const [error,setError] = useState("")
+  const [error,setError] = useState("")
   const handleSubmit = async (e) => {
     e.preventDefault();
     if(!email){

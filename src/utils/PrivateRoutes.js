@@ -25,9 +25,8 @@ const PrivateRoutes = ()=>{
       })
     return(
       <>
-      {console.log(token)}
         {token ? <Outlet /> : <Navigate to='/login' />}
-        </>
+      </>
     )
 }
 

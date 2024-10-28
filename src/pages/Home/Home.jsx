@@ -2,17 +2,18 @@ import React from 'react'
 import { Link } from 'react-router-dom';
 import NavBar from './../../components/NavBar/NavBar';
 import AboutUs from '../../components/AboutUs/AboutUs';
-import Products from '../Products/Products';
+import Products from '../USER/Products/Products';
 
-const Home = ({notexist,userId}) => {
+const Home = ({isexist}) => {
   return (
     <>
-      {!notexist && (
+      {!isexist && (
         <NavBar />
       )}
+      
       <div className="MainPageBackground min-h-screen flex flex-col justify-center items-center">
       <main className="flex-grow flex flex-col justify-center items-center text-center p-10">
-        <h1 className="text-3xl md:text-5xl font-extrabold text-white  main-text mb-4">Welcome to Our Shoes Store</h1>
+        <h2 className="text-3xl md:text-5xl font-extrabold text-white  main-text mb-4">Welcome to Our Shoes Store</h2>
         <p className="text-xl  text-white p-4 mb-6 max-w-2xl font-extrabold rounded-full ">
           We are selling different and various types of shoes 
         </p>
@@ -20,7 +21,7 @@ const Home = ({notexist,userId}) => {
           <a href="#aboutus" className="px-4 py-3 font-extrabold bg-primary text-white rounded-md shadow-md hover:bg-gray-900 transition duration-300">
             Learn More <i className="fa-solid fa-angle-down text-red-500  px-2 py-1 ml-4"></i>
           </a>
-          {!notexist && (
+          {!isexist && (
               <Link to='/signup' className='px-12 py-3 font-extrabold bg-primary text-white rounded-md shadow-md hover:bg-gray-900 transition duration-300'>Join us</Link>
           )}
           
@@ -28,10 +29,10 @@ const Home = ({notexist,userId}) => {
       </main>
     </div>
       <AboutUs />
-      {!notexist ? (
+      {!isexist ? (
         <Products  />
       ):(
-        <Products isUser={true} userId={userId} />
+        <Products isUser={true}  />
       )
       }
       

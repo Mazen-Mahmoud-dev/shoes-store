@@ -1,18 +1,17 @@
 import React, { useState } from 'react'
 import Modal from 'react-modal';
-import axiosInstance from '../../utils/axiosInstance';
+import axiosInstance from '../../../utils/axiosInstance';
 import { useNavigate } from 'react-router-dom';
 import {MdClose} from 'react-icons/md'
-import { BASE_URL } from '../../utils/constants';
+import { BASE_URL } from '../../../utils/constants';
 const EmailVerification = () => {
   const navigate = useNavigate()
   const [isShown, setIsShown] = useState(true);
-  
+  const [userEmail,setUserEmail] = useState(null)
   function closeModel() {
     setIsShown(false);
     setTimeout(()=>navigate('/login'),1000)
   }
-  const [userEmail,setUserEmail] = useState(null)
   const getUserInfo = async()=>{
     try{
       const response = await axiosInstance.get(`${BASE_URL}/get-user`);

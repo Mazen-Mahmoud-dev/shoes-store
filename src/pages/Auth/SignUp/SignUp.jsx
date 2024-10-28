@@ -1,10 +1,10 @@
 import React, { useEffect, useState } from 'react'
-import NavBar from '../../components/NavBar/NavBar'
-import PasswordInput from '../../components/Input/PasswordInput'
+import NavBar from '../../../components/NavBar/NavBar'
+import PasswordInput from '../../../components/Input/PasswordInput'
 import { Link, useNavigate } from 'react-router-dom'
-import { validateEmail } from '../../utils/helper'
-import axiosInstance from '../../utils/axiosInstance'
-import { BASE_URL } from '../../utils/constants'
+import { validateEmail } from '../../../utils/helper'
+import axiosInstance from '../../../utils/axiosInstance'
+import { BASE_URL } from '../../../utils/constants'
 
 const SignUp = () => {
   const[firstName,setFirstName] = useState("")

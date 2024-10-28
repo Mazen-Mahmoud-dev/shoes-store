@@ -1,10 +1,10 @@
-import React, { useRef, useState } from 'react'
+import React, { useEffect, useRef, useState } from 'react'
 import { useParams, NavLink } from 'react-router-dom';
-import axios from 'axios'
 import { XMarkIcon } from '@heroicons/react/24/outline'
-import addProductToFavourites from '../../utils/AddProductsToFavourites';
-import NavBar from '../../components/NavBar/NavBar';
-import { BASE_URL } from '../../utils/constants';
+import addProductToFavourites from '../../../utils/AddProductsToFavourites';
+import NavBar from '../../../components/NavBar/NavBar';
+import { BASE_URL } from '../../../utils/constants';
+import { fetchData } from '../../../utils/FetchData';
 
 
 
@@ -35,7 +35,7 @@ import { BASE_URL } from '../../utils/constants';
 
   
 const Product = ({addToCart}) => {
-    const {productId} = useParams()
+    const { productId } = useParams()
     let [product,setProduct] = useState({})
     const userId = localStorage.getItem("userId")
     const [selectedSize, setSelectedSize] = useState('');
@@ -45,22 +45,13 @@ const Product = ({addToCart}) => {
       imageShow.current.src = `${BASE_URL}/${imagePath}`
     }
     const handleSelectChange = (e) => {
-      setSelectedSize(e.target.value); // Update state with selected option
+      setSelectedSize(e.target.value);
     };
 
-    const fetchProduct = async ()=>{
-        try{
-            const response = await axios.get(`${BASE_URL}/api/products/${productId}`)
-            setProduct(response.data.data.product)
-        }  
-        catch (error) {
-            console.error('Error fetching the product', error);
-          }
-    }
-    fetchProduct()
-
+    useEffect(()=>{
+      fetchData(`${BASE_URL}/api/products/${productId}`,setProduct,(data)=>data.data.product,"Error fetching the product")
+    },[productId])
   return (
-
       <div>
         <NavBar userInfo={true} />
         <div className="flex min-h-full md:pb-5 mt-24 overflow-x-hidden md:overflow-hidden  items-stretch justify-center text-center md:items-center md:px-2 lg:px-4">

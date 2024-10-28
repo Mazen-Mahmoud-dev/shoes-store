@@ -1,8 +1,9 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
-import DeleteProductMsg from '../../components/DeleteProductMsg/DeleteProductMsg';
-import axiosInstance from '../../utils/axiosInstance';
-import { BASE_URL } from '../../utils/constants';
+import DeleteProductMsg from '../../../components/DeleteProductMsg/DeleteProductMsg';
+import { BASE_URL } from '../../../utils/constants';
+import axiosInstance from '../../../utils/axiosInstance';
+import { fetchData } from '../../../utils/FetchData';
 
 const ShowUsers = () => {
   const [users, setUsers] = useState([]);
@@ -10,19 +11,10 @@ const ShowUsers = () => {
   let [viewMsgDelete,setViewMsgDelete] = useState(false)
   const [userId,setUserId] = useState('')
   const token = localStorage.getItem("token")
-  const fetchUsers = async () => {
-    try {
-      const response = await axiosInstance.get(BASE_URL);
-      setUsers(response.data.data.users);
-      
-    } catch (error) {
-      console.error('Error fetching users', error);
-    }
-  };
   useEffect(() => {
-    fetchUsers();
+    fetchData(BASE_URL,setUsers,(data)=>data.data.users,'Error fetching users')
     localStorage.setItem("pageCounter",JSON.stringify(counterPage))
-  });
+  },[counterPage]);
   const HandlePreviousPage = async ()=>{
     let page = localStorage.getItem("pageCounter")
     if(page > 1){
@@ -57,7 +49,7 @@ const ShowUsers = () => {
         }
       })
       setViewMsgDelete(false)
-      fetchUsers()
+      fetchData(BASE_URL,setUsers,(data)=>data.data.users,'Error fetching users')
   }
   return (
     <div>

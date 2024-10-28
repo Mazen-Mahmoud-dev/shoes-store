@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from 'react'
-import NavBar from '../../components/NavBar/NavBar'
+import NavBar from '../../../components/NavBar/NavBar'
 import { Link, useNavigate } from 'react-router-dom'
-import PasswordInput from '../../components/Input/PasswordInput'
-import { validateEmail } from '../../utils/helper'
-import axiosInstance from '../../utils/axiosInstance'
+import PasswordInput from '../../../components/Input/PasswordInput'
+import { validateEmail } from '../../../utils/helper'
+import axiosInstance from '../../../utils/axiosInstance'
 
 const Login = () => {
   const navigate = useNavigate()

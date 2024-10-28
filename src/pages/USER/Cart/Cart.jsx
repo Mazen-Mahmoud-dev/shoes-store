@@ -1,31 +1,17 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
-import axiosInstance from '../../utils/axiosInstance';
-import NavBar from '../../components/NavBar/NavBar';
-import { BASE_URL } from '../../utils/constants';
+import NavBar from '../../../components/NavBar/NavBar';
+import { BASE_URL } from '../../../utils/constants';
+import { fetchData } from '../../../utils/FetchData';
 
 function Cart({ removeFromCart,emptyCart }) {
     const userId = localStorage.getItem("userId")
     let [cart,setCart] = useState([])
     const navg = useNavigate()
-    let check = true
     let price = 0;
-    const fetchCartProducts = async() =>{
-        const response = await axiosInstance.get(`${BASE_URL}/api/cart?userId=${userId}`)
-        if(check){
-            if(cart.length === 0){
-                if(response.data.data){       
-                    setCart(response.data.data)     
-                }
-            }
-            
-        }else{
-            if(response.data.data){       
-                setCart(response.data.data)
-            }
-        }
-    }
-
+    useEffect(()=>{
+        fetchData(`${BASE_URL}/api/cart?userId=${userId}`,setCart,(data)=>data.data,'Error Fetching Cart Products')
+    },[userId])
     const handleRemoveFromCart  = async(userId,product)=>{
         await removeFromCart(userId,product);
         
@@ -43,7 +29,7 @@ function Cart({ removeFromCart,emptyCart }) {
         setCart(updatedCart);
         
     };
-    fetchCartProducts()
+    
   return (
     <div>
         <NavBar  userInfo={true} />
@@ -113,9 +99,14 @@ function Cart({ removeFromCart,emptyCart }) {
                             </table>
                         </div>
                     </div>
-                    <div>
-                        <h4 className='mt-20 ml-5 text-lg'>total price: {price}$</h4>
-                        <button className='bg-green-500 px-4 py-2 ml-5 text-white font-extrabold flex items-center gap-4 rounded hover:bg-green-600'
+                    <div className='border relative w-full md:w-1/3 ml-0 h-full py-20 md:ml-16  rounded-md mt-20 flex justify-center flex-col items-center gap-12'>
+                    <h4 className='absolute top-10 left-2'>Order Details: </h4>
+                        <div className='flex flex-col gap-5'>
+                            <h4 className='text-lg'>Total Price: {price}$</h4>
+                            <h4 className='text-lg'>Shipment: 40$</h4>
+                            <h4 className='text-lg'>Order Price: {price + 40}$</h4>
+                        </div>
+                        <button className='bg-green-500 px-4 py-2  text-white font-extrabold flex items-center gap-4 rounded hover:bg-green-600'
                         onClick={()=>{
                             emptyCart(userId)
                             setCart([])

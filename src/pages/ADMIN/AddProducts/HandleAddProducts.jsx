@@ -1,9 +1,9 @@
 import React, { useState } from 'react'
 import AddProduct from './AddProduct';
-import StockInputForm from '../../components/Input/StockInputForm ';
+import StockInputForm from '../../../components/Input/StockInputForm ';
 import axios from 'axios';
 import  Modal  from 'react-modal';
-import { BASE_URL } from '../../utils/constants';
+import { BASE_URL } from '../../../utils/constants';
 
 const HandleAddProducts = () => {
     const [step, setStep] = useState(1);

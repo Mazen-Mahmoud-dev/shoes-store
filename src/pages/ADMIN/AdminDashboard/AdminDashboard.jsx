@@ -1,8 +1,8 @@
 import React, { useState } from 'react'
-import axiosInstance from '../../utils/axiosInstance'
+import axiosInstance from '../../../utils/axiosInstance'
 import { Outlet, useNavigate } from 'react-router-dom';
-import AdminNavbar from '../../components/NavBar/AdminNavbar'
-import { BASE_URL } from '../../utils/constants'
+import AdminNavbar from '../../../components/NavBar/AdminNavbar'
+import { BASE_URL } from '../../../utils/constants'
 
 const AdminDashboard = () => {
     const navigate = useNavigate()

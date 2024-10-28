@@ -1,27 +1,18 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
-import DeleteProductMsg from '../../components/DeleteProductMsg/DeleteProductMsg';
-import { BASE_URL } from '../../utils/constants';
-
+import DeleteProductMsg from '../../../components/DeleteProductMsg/DeleteProductMsg';
+import { BASE_URL } from '../../../utils/constants';
+import { fetchData } from '../../../utils/FetchData';
 const ShowProducts = () => {
   const [products, setProducts] = useState([]);
   let [counterPage] = useState(1)
   let [viewMsgDelete,setViewMsgDelete] = useState(false)
   const [productId,setProductId] = useState('')
   const token = localStorage.getItem("token")
-  const fetchProducts = async () => {
-    try {
-      const response = await axios.get(`${BASE_URL}/api/products`);
-      setProducts(response.data.data.products);
-      
-    } catch (error) {
-      console.error('Error fetching products', error);
-    }
-  };
   useEffect(() => {
-    fetchProducts();
+    fetchData(`${BASE_URL}/api/products`,setProducts,(data)=>data.data.products,'Error fetching products')
     localStorage.setItem("pageCounter",JSON.stringify(counterPage))
-  });
+  },[counterPage]);
   const HandlePreviousPage = async(counterPage)=>{
     let page = localStorage.getItem("pageCounter")
     if(page > 1){
@@ -56,7 +47,8 @@ const ShowProducts = () => {
         }
       })
       setViewMsgDelete(false)
-      fetchProducts()
+      fetchData(`${BASE_URL}/api/products`,setProducts,(data)=>data.data.products,'Error fetching products')
+      
   }
   return (
     <div>

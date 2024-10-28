@@ -1,19 +1,16 @@
 import React from 'react';
 import {  Route, Routes } from 'react-router-dom';
 import axios from 'axios';
-
-import Cart from '../../pages/Cart/Cart';
-import Product from '../../pages/Product/Product';
+import Cart from '../../pages/USER/Cart/Cart';
+import Product from '../../pages/USER/Product/Product';
 import { BASE_URL } from '../../utils/constants';
 
-const CartRoute = () =>{
 
-  // Add item to cart
+const CartRoute = () =>{
   const addToCart = (product,userId) => {
     axios.post(`${BASE_URL}/api/cart`, { product,userId });
   };
  
-  // Remove item from cart
   const removeFromCart = (userId,product) => {
     axios.delete(`${BASE_URL}/api/cart/${product._id}`,{
         data:{
