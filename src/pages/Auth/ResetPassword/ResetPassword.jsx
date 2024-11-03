@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { useParams } from 'react-router-dom';
-import NavBar from '../../../components/NavBar/NavBar';
 import axiosInstance from '../../../utils/axiosInstance';
+import NavBar2 from '../../../components/NavBar/NavBar2';
 
 function ResetPassword() {
   const { token } = useParams();
@@ -32,7 +32,7 @@ function ResetPassword() {
 
   return (
     <div>
-        <NavBar />
+        <NavBar2 />
       <div className='pt-24 flex flex-col items-center'>
         <h2 className='text-4xl mb-5 font-extrabold'>Reset Password</h2>
         <form onSubmit={handleSubmit} className='flex flex-col'>

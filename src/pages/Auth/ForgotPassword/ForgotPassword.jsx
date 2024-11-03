@@ -1,7 +1,7 @@
 import { useState } from 'react';
-import NavBar from '../../../components/NavBar/NavBar';
 import { validateEmail } from '../../../utils/helper';
 import axiosInstance from '../../../utils/axiosInstance';
+import NavBar2 from '../../../components/NavBar/NavBar2';
 
 const ForgotPassword = () => {
   const [email, setEmail] = useState('');
@@ -35,7 +35,7 @@ const ForgotPassword = () => {
 
   return (
     <div>
-        <NavBar />
+        <NavBar2 />
       <div className='pt-24 flex flex-col items-center'>
         <h2 className='text-4xl mb-5 font-extrabold'>Forgot Password</h2>
         <form onSubmit={handleSubmit} className='flex flex-col'>
