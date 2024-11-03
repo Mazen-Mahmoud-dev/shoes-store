@@ -1,5 +1,4 @@
 import React, { createContext, useEffect, useState } from 'react'
-import NavBar from '../../../components/NavBar/NavBar';
 import axiosInstance from '../../../utils/axiosInstance';
 import { useLocation, useNavigate } from 'react-router-dom';
 import Home from '../../Home/Home';
