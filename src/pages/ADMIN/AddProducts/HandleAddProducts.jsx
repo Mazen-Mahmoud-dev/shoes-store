@@ -9,7 +9,6 @@ const HandleAddProducts = () => {
     const [step, setStep] = useState(1);
     const [productDetails, setProductDetails] = useState(null);
     const token = localStorage.getItem("token")
-
     let [message,setMessage] = useState({
         msg:'It is opened',
         isShown:false

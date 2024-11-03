@@ -69,7 +69,7 @@ const Product = ({addToCart}) => {
               <div className="flex justify-between items-center  pb-8 md:flex-row flex-col  gap-x-6 gap-y-8">
                 <div className="md:absolute flex flex-col items-center md:w-56">
                 <img alt={product.title} ref={imageShow} src={`${BASE_URL}/${product.cover}`} className="h-52 w-full " />
-                <div className='mt-4 flex gap-x-3 items-center'>
+                <div className='mt-4 flex gap-5 items-center flex-wrap'>
                     <img alt={product.title} onMouseOver={()=>changeImage(product.cover)} src={`${BASE_URL}/${product.cover}`} className="w-24 hover:cursor-pointer h-24" />
                     {product.images?.map((imagePath)=>{
                       return(

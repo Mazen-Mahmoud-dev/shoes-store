@@ -60,7 +60,7 @@ const Products = ({isUser}) => {
                               <div className="links flex justify-center items-center">
                                 <NavLink to={!isUser && '/signup'}
                                   onClick={(e)=>{
-                                      e.preventDefault();
+                                      isUser && e.preventDefault();
                                       addProductToFavourites(userId,product._id,product)
                                   }}
                                 className='relative z-10 outline outline-1 outline-red-500 rounded-md py-3 px-4 hover:bg-red-500 transition-all group/heart'><i className="fa-solid fa-heart text-red-500 text-2xl group-hover/heart:text-white transition-all"></i></NavLink>

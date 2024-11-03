@@ -6,6 +6,7 @@ import Home from '../../Home/Home';
 import Favourites from '../Favourites/Favourites';
 import Products from '../Products/Products';
 import { BASE_URL } from '../../../utils/constants';
+import NavBar2 from '../../../components/NavBar/NavBar2';
 export const USERID = createContext()
 const Dashboard = () => {
     const navigate = useNavigate()
@@ -34,7 +35,7 @@ const Dashboard = () => {
   
   return (
     <>
-      <NavBar  userInfo={userInfo}/>
+      <NavBar2  userInfo={userInfo}/>
       
       <USERID.Provider value={userId}>
         {location.pathname === '/dashboard/favourites' ?
