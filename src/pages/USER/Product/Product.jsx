@@ -2,9 +2,9 @@ import React, { useEffect, useRef, useState } from 'react'
 import { useParams, NavLink } from 'react-router-dom';
 import { XMarkIcon } from '@heroicons/react/24/outline'
 import addProductToFavourites from '../../../utils/AddProductsToFavourites';
-import NavBar from '../../../components/NavBar/NavBar';
 import { BASE_URL } from '../../../utils/constants';
 import { fetchData } from '../../../utils/FetchData';
+import NavBar2 from '../../../components/NavBar/NavBar2';
 
 
 
@@ -53,7 +53,7 @@ const Product = ({addToCart}) => {
     },[productId])
   return (
       <div>
-        <NavBar userInfo={true} />
+        <NavBar2 userInfo={true} />
         <div className="flex min-h-full md:pb-5 mt-24 overflow-x-hidden md:overflow-hidden  items-stretch justify-center text-center md:items-center md:px-2 lg:px-4">
             <div className="md:relative flex w-full justify-evenly items-center mx-12 bg-white px-4 md:pb-8  sm:px-6 sm:pt-8 md:p-6 lg:p-8 h-[1100px] md:h-[600px]">
               <NavLink to='/dashboard/products'>

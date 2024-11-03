@@ -17,8 +17,8 @@ import Products from './pages/USER/Products/Products'
 import ForgotPassword from './pages/Auth/ForgotPassword/ForgotPassword'
 import ResetPassword from './pages/Auth/ResetPassword/ResetPassword'
 import AboutUs from './components/AboutUs/AboutUs'
-import NavBar from './components/NavBar/NavBar'
 import AdminDashboard from './pages/ADMIN/AdminDashboard/AdminDashboard'
+import NavBar2 from './components/NavBar/NavBar2'
 
 const router = (
 
@@ -32,7 +32,7 @@ const router = (
         
       <Route path='/reset-password/:token' element={<ResetPassword />} />
       <Route path='/signup' exact element={<SignUp />} />
-      <Route path='/about-us'  element={<><NavBar /><div className='pt-24'><AboutUs /></div></>} />
+      <Route path='/about-us'  element={<><NavBar2 /><div className='pt-24'><AboutUs /></div></>} />
 
       <Route path='/forgot-password' element={<ForgotPassword />} />
       <Route element={<PrivateRoutes />} >
