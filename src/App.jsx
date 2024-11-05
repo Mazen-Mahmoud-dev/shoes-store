@@ -53,7 +53,7 @@ const router = (
       </Route>
       
       
-      <Route path='/verifiedemail/:token' exact element={<VerifyEmail />} />
+      <Route path='/verifiedemail/:token' element={<VerifyEmail />} />
       
       <Route path='/emailverification' exact element={<EmailVerification />} />
     </Routes>

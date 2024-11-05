@@ -24,7 +24,12 @@ const VerifyEmail = () => {
   },[navigate,token])
 
 
-  return <div>{message}</div>;
+  return(
+    <div>
+      {message ? message : "Verification failed"}
+    </div>
+    
+  );
 };
 
 export default VerifyEmail;
