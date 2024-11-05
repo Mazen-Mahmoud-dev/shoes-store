@@ -22,7 +22,7 @@ export default function NavBar2({userInfo}) {
     }else{
       navigation = [
         {name: <Link to='/'>Home</Link>, href: '/'},
-        { name: 'Shop', href: "/dashboard/products" },
+        { name: 'Shop', href: "#shop" },
         { name: <Link to='/about-us'>About Us</Link>, href: '/about-us'},
         {name:'Contact Us', href: 'https://wa.me/+2001272795074' }
       ]
