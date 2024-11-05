@@ -36,7 +36,7 @@ const Favourites = () => {
                 return(
                     <NavLink className='block card  cursor-pointer group/scaleImage mb-8 w-[250px]  sm:w-[300px] mx-auto bg-slate-100 relative rounded-md '>
                           <div className="image w-full overflow-hidden">
-                            <img src={`${BASE_URL}/${product.cover}`} alt="product" 
+                            <img src={`${BASE_URL}/${product.cover}`} alt="product" loading='lazy'
                             className='w-full h-48 rounded-md scale-100 group-hover/scaleImage:scale-125 transition-all duration-500  ease-in-out' />
                           </div>
                           <div className="info p-5">

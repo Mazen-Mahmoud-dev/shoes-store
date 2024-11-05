@@ -6,33 +6,6 @@ import { BASE_URL } from '../../../utils/constants';
 import { fetchData } from '../../../utils/FetchData';
 import NavBar2 from '../../../components/NavBar/NavBar2';
 
-
-
-// const productS = {
-//     name: 'Basic Tee 6-Pack ',
-//     price: '$192',
-//     rating: 3.9,
-//     reviewCount: 117,
-//     href: '#',
-//     imageSrc: 'https://tailwindui.com/img/ecommerce-images/product-quick-preview-02-detail.jpg',
-//     imageAlt: 'Two each of gray, white, and black shirts arranged on table.',
-//     colors: [
-//       { name: 'White', class: 'bg-white', selectedClass: 'ring-gray-400' },
-//       { name: 'Gray', class: 'bg-gray-200', selectedClass: 'ring-gray-400' },
-//       { name: 'Black', class: 'bg-gray-900', selectedClass: 'ring-gray-900' },
-//     ],
-//     sizes: [
-//       { name: 'XXS', inStock: true },
-//       { name: 'XS', inStock: true },
-//       { name: 'S', inStock: true },
-//       { name: 'M', inStock: true },
-//       { name: 'L', inStock: true },
-//       { name: 'XL', inStock: true },
-//       { name: 'XXL', inStock: true },
-//       { name: 'XXXL', inStock: false },
-//     ],
-//   }
-
   
 const Product = ({addToCart}) => {
     const { productId } = useParams()
@@ -68,7 +41,7 @@ const Product = ({addToCart}) => {
 
               <div className="flex justify-between items-center  pb-8 md:flex-row flex-col  gap-x-6 gap-y-8">
                 <div className="md:absolute flex flex-col items-center md:w-56">
-                <img alt={product.title} ref={imageShow} src={`${BASE_URL}/${product.cover}`} className="h-52 w-full " />
+                <img alt={product.title} ref={imageShow} loading='lazy' src={`${BASE_URL}/${product.cover}`} className="h-52 w-full " />
                 <div className='mt-4 flex gap-5 items-center flex-wrap'>
                     <img alt={product.title} onMouseOver={()=>changeImage(product.cover)} src={`${BASE_URL}/${product.cover}`} className="w-24 hover:cursor-pointer h-24" />
                     {product.images?.map((imagePath)=>{

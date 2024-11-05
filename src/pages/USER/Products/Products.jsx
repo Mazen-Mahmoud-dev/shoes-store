@@ -26,7 +26,7 @@ const Products = ({isUser}) => {
   return (
     <div className='bg-white py-16' id="shop">
           <div>
-            <h2 className="text-[#ebeced] text-[100px] text-center font-extrabold tracking-[-3px] capitalize">our products</h2>
+            <h2 className="text-[#ebeced] text-[70px] md:text-[100px] text-center font-extrabold tracking-[-3px] capitalize">our products</h2>
             <p className="mt-[-40px] text-[20px] text-center text-[#797979]">all you need is here</p>
           </div>
         <div className='mt-24'>
@@ -48,7 +48,7 @@ const Products = ({isUser}) => {
                       className='block card group group/scaleImage cursor-pointer w-[250px]  sm:w-[300px] mx-auto bg-slate-100 relative
                       before:content-[""] before:absolute before:top-0 before:left-0 before:w-full before:h-full before:bg-white before:bg-opacity-0 hover:before:bg-opacity-50 before:transition-all before:duration-150 before:rounded-md rounded-md '>
                             <div className="image w-full overflow-hidden ">
-                              <img src={`${BASE_URL}/${product.cover}`} alt="product" 
+                              <img loading='lazy' src={`${BASE_URL}/${product.cover}`} alt="product" 
                               className='w-full h-48  rounded-md scale-100 group-hover/scaleImage:scale-125 transition-all duration-500  ease-in-out' />
                             </div>
                             <div className="info p-5">

@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
-import NavBar from '../../../components/NavBar/NavBar';
 import { BASE_URL } from '../../../utils/constants';
 import { fetchData } from '../../../utils/FetchData';
+import NavBar2 from '../../../components/NavBar/NavBar2';
 
 function Cart({ removeFromCart,emptyCart }) {
     const userId = localStorage.getItem("userId")
@@ -32,7 +32,7 @@ function Cart({ removeFromCart,emptyCart }) {
     
   return (
     <div>
-        <NavBar  userInfo={true} />
+        <NavBar2  userInfo={true} />
         <div className='pt-24'>
                 <h4 className='text-4xl font-extrabold capitalize text-center mb-12'>Your Cart</h4>
             {cart.length === 0 ? (

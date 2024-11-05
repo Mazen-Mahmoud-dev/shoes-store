@@ -50,7 +50,7 @@ const NavBar = ({ userInfo }) => {
           </div>
           <div className={`flex flex-1 items-center  sm:items-stretch  ${userInfo  ? 'justify-center sm:justify-start':'justify-end sm:ml-8 lg:justify-center'} `}>
             <div className="flex flex-shrink-0 items-center">
-              <Link to={userInfo ? '/dashboard':'/'}><img
+            <Link to={userInfo ? '/dashboard':'/'}><img
                 alt="Shoes Store"
                 src={Logo}
                 className={`h-20 w-auto ${userInfo ? 'mr-28':'lg:mr-24'}`}
@@ -82,7 +82,7 @@ const NavBar = ({ userInfo }) => {
                 {userInfo ? (
                     <Menu as="div" className="relative mx-8">
                       <div>
-                        <MenuButton className="relative flex rounded-full bg-gray-800 text-sm focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800">
+                      <MenuButton className="relative flex rounded-full bg-gray-800 text-sm focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800">
                           <span className="absolute -inset-1.5" />
                           <span className="sr-only">Open user menu</span>
                           <img

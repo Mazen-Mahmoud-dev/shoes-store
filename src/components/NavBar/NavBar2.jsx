@@ -7,28 +7,26 @@ export default function NavBar2({userInfo}) {
     let navigation;
     if(userInfo){
        navigation = [
-        { name: <Link to='/dashboard'>Home</Link>, href: '/dashboard', current: true,target:'_self' },
-        { name: 'Shop', href: '/dashboard/products', current: false,target:'_self' },
-        { name: 'About Us', href: '/dashboard#aboutus', current: false,target:'_self' },
-        { name: <Link to="/dashboard/favourites"><i className='fa-regular fa-heart text-xl'></i></Link>, href: '/dashboard/favourites', current: false,target:'_self' },
+        { name: <Link to='/dashboard'>Home</Link>, href: '/dashboard' },
+        { name: 'Shop', href: '/dashboard/products' },
+        { name: 'About Us', href: '/dashboard#aboutus'},
+        { name: <Link to="/dashboard/favourites"><i className='fa-regular fa-heart text-xl'></i></Link>, href: '/dashboard/favourites' },
         {name:<Link to="/dashboard/cart" className="group -m-2 flex items-center p-2">
           <i
             aria-hidden="true"
             className="bi bi-cart3 h-6 w-6 text-xl flex-shrink-0 text-black  group-hover:text-gray-900"
           />
           <span className="sr-only">items in cart, view bag</span>
-        </Link>,href:"#",current:false,target:'_self'}
+        </Link>,href:"#"}
       ]
     }else{
       navigation = [
-        {name: <Link to='/'>Home</Link>, href: '/', current: true,target:'_self'},
-        { name: 'Shop', href: "/dashboard/products", current: false,target:'_self' },
-        { name: <Link to='/about-us'>About Us</Link>, href: '/about-us', current: false,target:'_self' },
-        {name:'Contact Us', href: 'https://wa.me/+2001272795074', current: false,target:'_blank' }
+        {name: <Link to='/'>Home</Link>, href: '/'},
+        { name: 'Shop', href: "/dashboard/products" },
+        { name: <Link to='/about-us'>About Us</Link>, href: '/about-us'},
+        {name:'Contact Us', href: 'https://wa.me/+2001272795074' }
       ]
     }
-    console.log(userInfo);
-    
     const navigate = useNavigate();
     const onlogout = ()=>{
         localStorage.clear()
@@ -36,8 +34,8 @@ export default function NavBar2({userInfo}) {
     };
   return (
     <Navbar fluid rounded className="fixed top-0 w-full z-50 border-b-2  border-b-cyan-300">
-      <Navbar.Brand href="/">
-        <img src={Logo} className="mr-3 h-6 sm:h-14 w-full" alt="Website Logo" />
+      <Navbar.Brand href={userInfo ? "/dashboard": "/"}>
+        <img src={Logo} className="mr-3 h-6 sm:h-14 w-full" alt="Website Logo" loading="lazy" />
         <span className="self-center whitespace-nowrap text-xl font-semibold dark:text-white">Shoes Store</span>
       </Navbar.Brand>
       <div className="flex md:order-2">
